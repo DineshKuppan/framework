@@ -11,20 +11,20 @@ public class CustomElementFactory implements ElementFactory {
         E element;
         try {
             element = findImplementingClass(clazz)
-                        .getDeclaredConstructor(WebElement.class)
-                        .newInstance(wrappedElement);w
+                    .getDeclaredConstructor(WebElement.class)
+                    .newInstance(wrappedElement);
         } catch (IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }
         return element;
     }
-w
+
     private <E extends Element> Class<? extends E> findImplementingClass(final Class<E> elementClass) {
         String pack = elementClass.getPackage().getName();
         String className = elementClass.getSimpleName();
         String extendedClassName = pack + "." + className;
         try {
-            return (Class<? extends  E>)Class.forName(extendedClassName);
+            return (Class<? extends E>) Class.forName(extendedClassName);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("Unable to load class for " + extendedClassName, e);
         }

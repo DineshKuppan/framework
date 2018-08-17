@@ -7,6 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 public @interface NeedBrowser {
     /**
      * A browser name
+     *
      * @return The name of the browser to instantiate a driver object
      */
     String name() default "";

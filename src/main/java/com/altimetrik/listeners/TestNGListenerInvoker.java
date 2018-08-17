@@ -38,7 +38,7 @@ public class TestNGListenerInvoker implements IInvokedMethodListener {
 
     private void initialiseListeners() {
         String file = "META-INF/services/listeners.txt";
-        try(BufferedReader reader = new BufferedReader(new InputStreamReader(getStream(file)))) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(getStream(file)))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 listeners.add(instantiate(line));
@@ -63,7 +63,7 @@ public class TestNGListenerInvoker implements IInvokedMethodListener {
         }
         try {
             Class<?> clazz = Class.forName(className);
-            if (! ITestNGListener.class.isAssignableFrom(clazz)) {
+            if (!ITestNGListener.class.isAssignableFrom(clazz)) {
                 throw new IllegalArgumentException(className + " does not implement a TestNG listener");
             }
             return (ITestNGListener) clazz.newInstance();

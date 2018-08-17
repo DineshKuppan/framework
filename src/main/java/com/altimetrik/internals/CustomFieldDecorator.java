@@ -27,6 +27,6 @@ public class CustomFieldDecorator extends DefaultFieldDecorator {
     }
 
     private Object decorateElement(final Field field, final WebElement wrappedElement) {
-        return elementFactory.create((Class<? extends Element>)field.getType(), wrappedElement);
+        return elementFactory.create((Class<? extends Element>) field.getType(), wrappedElement);
     }
 }

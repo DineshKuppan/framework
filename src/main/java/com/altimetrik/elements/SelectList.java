@@ -36,7 +36,7 @@ public class SelectList extends Element {
     }
 
     public void selectAllOptions() {
-        for (WebElement option: constructSelectElement().getOptions()) {
+        for (WebElement option : constructSelectElement().getOptions()) {
             if (!option.isSelected()) {
                 option.click();
             }

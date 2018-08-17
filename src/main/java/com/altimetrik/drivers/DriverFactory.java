@@ -7,13 +7,11 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 public class DriverFactory {
 
     /**
      * Creates the remote web driver instance with the local browser name
+     *
      * @param browserName The local browser name, refer {@link Browser} enum for the list of browsers
      * @return The instance of the {@link RemoteWebDriver}
      */
